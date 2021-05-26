@@ -8,9 +8,10 @@
 
 
 
-`create user 'root'@'%' identified by 'yourpassword';`  // 8.0 之后的版本  
-                                          
-`grant all privileges on *.* to 'root'@'%' identified by 'yourpassword' with grant option;` // new 
+`create user 'root'@'%' identified by 'yourpassword';`   
+​
+`grant all on *.* to 'root'@'%' with grant option;`   
+ 
 `flush privileges;`  
 
 

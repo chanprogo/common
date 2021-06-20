@@ -36,7 +36,7 @@ server.3=172.24.18.66:2888:3888
 
 并在其尾部追加如下内容：
 ```
-export ZOOKEEPER_HOME=/usr/local/services/zookeeper/zookeeper-3.4.9/
+export ZOOKEEPER_HOME=/usr/local/services/zookeeper/zookeeper-3.4.9
 export PATH=$ZOOKEEPER_HOME/bin:$PATH
 export PATH
 ```

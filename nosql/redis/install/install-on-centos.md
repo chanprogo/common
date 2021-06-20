@@ -47,14 +47,14 @@
 -------------------
 **以后台进程方式启动：**
 修改/usr/local/redis-4.0.9/redis.conf：`vim redis.conf`
-修改 daemonize no，将值no改为值yes，保存退出。
+修改 daemonize no，将值 no 改为值 yes，保存退出。
 
 指定 redis.conf 文件启动：`./redis-server /usr/local/redis-4.0.9/redis.conf`
 
 **设置 Redis 远程连接：**
 
-*  因为 Redis 默认设置允许本地连接，所以我们要将 redis.conf 中将 bind 127.0.0.1 改为 bind 0.0.0.0 或者注释该行
-*  另外，阿里云 ECS 有一个安全组，找到并添加规则允许 6379 端口访问
+因为 Redis 默认设置允许本地连接，所以我们要将 redis.conf 中将 bind 127.0.0.1 改为 bind 0.0.0.0 或者注释该行
+
 
 **设置 Redis 连接密码：**
 在 redis.conf中搜索 requirepass 这一行，然后在合适的位置添加配置：

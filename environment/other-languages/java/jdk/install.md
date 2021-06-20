@@ -51,3 +51,22 @@ export PATH=$PATH:$JAVA_HOME/bin
 <br><br><br>
 
 `java -version`  
+
+
+
+
+
+
+安装 jdk：  
+
+检查电脑是否已安装 jdk
+
+`yum list installed | grep java`  
+
+查看 yum 中的 jdk 版本    
+
+`yum -y list java*`  
+
+安装 jdk
+
+`yum -y install java-1.8.0-openjdk*`

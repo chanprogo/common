@@ -2,7 +2,7 @@
 
 
 
-`yum install redis`  
+`yum -y install redis`  
 `vi /etc/redis.conf`  
 `redis-server /etc/redis.conf`  
 

@@ -3,7 +3,7 @@
 
 `/usr/local/services/zookeeper/zookeeper-3.4.9/bin/zkCli.sh -server 127.0.0.1:2181`  
 
-
+`quit`  
 
 
 创建配置节点（这个后续会提供页面来处理）：  

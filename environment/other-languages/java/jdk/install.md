@@ -1,9 +1,7 @@
 
-`wget http://mirrors.linuxeye.com/jdk/jdk-8u141-linux-x64.tar.gz`  
+`wget https://repo.huaweicloud.com/java/jdk/8u151-b12/jdk-8u151-linux-x64.tar.gz`
 
-
-
-`mkdir /usr/java && tar -C /usr/java -zxvf jdk-8u141-linux-x64.tar.gz`  
+`mkdir /usr/java && tar -C /usr/java -zxvf jdk-8u151-linux-x64.tar.gz`  
 `chmod -R 777 /usr/java/`  
 
 
@@ -14,7 +12,7 @@
 `vim /etc/profile`  
 
 ```
-export JAVA_HOME=/usr/java/jdk1.8.0_141  
+export JAVA_HOME=/usr/java/jdk1.8.0_151/  
 export CLASSPATH=$CLASSPATH:$JAVA_HOME/lib/tools.jar:$JAVA_HOME/lib/dt.jar:$JAVA_HOME/lib  
 export PATH=$PATH:$JAVA_HOME/bin  
 ```

@@ -15,6 +15,10 @@
 
 
 
+使用 shell 命令获取:
+
+`qconf get_conf /demo/confs/conf1`  
+`qconf get_batch_keys /demo/confs`  
 
 
 

@@ -3,7 +3,8 @@ zkdash 是一个 zookeeper 的 管理界面，也可以 作为 任何 基于 zoo
 
 安装并运行 mysql  
 
-
+         
+`git clone https://github.com/ireaderlab/zkdash.git`  
 
 
 

@@ -22,82 +22,41 @@
 
 
 
-##  
 
-ISR 是由 leader 维护， 
-follower 从 leader 同步数据 有一些延迟（包括延迟时间 replica.lag.time.max.ms 和 延迟条数 replica.lag.max.messages 两个维度, 
-当前最新的版本 0.10.x 中只支持 replica.lag.time.max.ms 这个维度），
-任意一个超过阈值都会把 follower 剔除出 ISR, 存入 OSR（Outof-Sync Replicas） 列表，
-新加入的follower 也会 先存放在 OSR 中。 
+## kafka 中 的 zookeeper 起到什么作用，可以不用 zookeeper 么
 
-AR=ISR+OSR。   
+zookeeper 是 一个 分布式的协调组件，早期版本的 kafka 用 zk 做 
+meta 信息 存储，
+consumer 的 消费状态，
+group 的管理 
+以及 offset 的值。  
 
+考虑到 zk 本身的 一些因素 
+以及 整个架构 较大概率 存在 单点问题，新版本中 逐渐弱化了 zookeeper 的作用。  
 
+新的 consumer 使用了 kafka 内部的 group coordination 协议，也减少了 对 zookeeper 的依赖，
 
-
-## kafka 中的 broker 是干什么的  
-
-broker 是消息的代理，
-Producers 往 Brokers 里面的 指定 Topic 中 写消息，
-Consumers 从 Brokers 里面 拉取 指定 Topic 的消息，然后进行 业务处理，
-broker 在中间起到一个代理 保存消息的 中转站。
-
-
-
-## kafka中的 zookeeper 起到什么作用，可以不用zookeeper么
-
-zookeeper 是一个分布式的协调组件，早期版本的 kafka 用 zk 做 meta 信息存储，consumer 的消费状态，group 的管理 以及 offset 的值。  
-考虑到 zk 本身的 一些因素 以及整个架构 较大概率 存在单点问题，新版本中 逐渐弱化了 zookeeper 的作用。  
-
-新的 consumer 使用了 kafka 内部的 group coordination 协议，也减少了对 zookeeper 的依赖，
-
-但是 broker 依然依赖于 ZK，zookeeper 在 kafka 中还用来选举 controller 和 检测 broker 是否 存活等等。
-
-
-
-
-## kafka follower 如何与 leader 同步数据
-
-Kafka 的复制机制 既不是 完全的 同步复制，也不是 单纯的 异步复制。  
-完全同步复制 要求 All Alive Follower 都复制完，这条消息 才会被 认为 commit，这种复制方式 极大的 影响了吞吐率。
-而异步复制方式下，Follower 异步的 从 Leader 复制数据，数据只要被 Leader 写入 log 就被认为 已经 commit，这种情况下，如果 leader 挂掉，会丢失数据，
-kafka 使用 ISR 的方式 很好的均衡了 确保数据不丢失以及吞吐率。  
-Follower 可以批量的 从 Leader 复制数据，而且 Leader 充分利用 磁盘顺序 读 以及 send file（zero copy）机制，这样 极大的 提高复制性能，内部 批量写磁盘，大幅减少了Follower 与 Leader 的消息量差。
+但是 broker 依然 依赖于 ZK，
+zookeeper 在 kafka 中 还 用来 选举 controller 和 检测 broker 是否 存活等等。
 
 
 
 
 
-## 什么情况下一个 broker 会从 isr 中踢出去
-
-leader 会维护 一个 与其 基本保持同步的 Replica 列表，该列表称为 ISR（in-sync Replica)，
-每个 Partition 都会有一个 ISR，而且是由 leader 动态维护，
-如果一个 follower 比一个 leader 落后太多，或者超过一定时间 未发起 数据复制请求，则 leader 将其从 ISR 中移除 。
-
-
-
-
-
-
-## kafka 为什么那么快
-
-1. Cache Filesystem Cache PageCache 缓存
-2. 顺序写 由于现代的 操作系统 提供了 预读和写技术，磁盘的顺序写 大多数情况下 比 随机写 内存还要快。
-3. Zero-copy 零拷技术 减少拷贝次数
-4. Batching of Messages 批量处理。合并小的请求，然后 以流的方式进行交互，直顶网络上限。
-5. Pull 拉模式 使用拉模式 进行消息的 获取消费，与消费端 处理能力相符。
 
 
 
 
 ## kafka producer 如何优化 打入速度
 
-1. 增加线程
+1. 增加 线程
 2. 提高 batch.size
-3. 增加更多 producer 实例
+3. 增加 更多 producer 实例
 4. 增加 partition 数
-5. 设置 acks=-1 时，如果延迟增大：可以增大 num.replica.fetchers（follower 同步数据的线程数）来调解；
-6. 跨数据中心 的传输：增加 socket 缓冲区 设置 以及 OS tcp 缓冲区设置。
+5. 设置 acks=-1 时，  如果延迟增大：  可以增大 num.replica.fetchers（follower 同步数据的线程数） 来 调解；
+6. 跨数据中心 的 传输： 增加 socket 缓冲区 设置   以及 OS tcp 缓冲区 设置。
+
+
 
 
 

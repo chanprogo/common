@@ -1,12 +1,8 @@
 
-
-
-
 资产表 逐笔 更新记录 
 更新前后资产
 
-per_change_finacial_record   (root)
-before, later 为json格式数据
+per_change_finacial_record   (root)                  before, later 为 json 格式数据
 
 
 
@@ -22,5 +18,4 @@ from per_change_finacial_record limit 1
 ```    
 
 
-查询一条更新操作前后  
-用户的可用资产
+查询 一条 更新 操作 前后     用户的 可用资产

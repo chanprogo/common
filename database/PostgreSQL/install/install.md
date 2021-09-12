@@ -35,21 +35,6 @@
 
 
 
-`cd /etc/postgresql/10/main`  
-`sudo vim postgresql.conf`   `listen_addresses = '*'`   
-`sudo vim pg_hba.conf`    `host  all  all 0.0.0.0/0 md5`    
-修改密码： 
-`sudo -u postgres psql`  
-`ALTER USER postgres WITH PASSWORD 'postgres';`  
-`\q`  
-
-
-
-
-
-重启： `sudo service postgresql restart`  
-
-
 
 
 

@@ -1,17 +1,8 @@
 
-# 一
 
 **添加运行 nginx 服务进程的用户：**  
 `groupadd -r nginx`  
 `useradd -r -g nginx nginx`  
-
-
-
-
-
-
-
-
 
 
 

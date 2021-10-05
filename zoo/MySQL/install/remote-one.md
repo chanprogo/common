@@ -21,7 +21,7 @@
 
 
 
-`update user set authentication_string=password('yourpassword') where user="root"`  或者  
+`update user set authentication_string=password('yourpassword'), plugin='mysql_native_password' where user="root";`  或者  
 `alter user ‘用户名’@'主机名' identified with mysql_native_password by 'yourpassword';`    
 alter 对密码有安全规范要求，不能设置简单密码（大小写，数字，字符，无序）。update 不做限制。   
 

@@ -1,4 +1,4 @@
-package cachev
+package cache
 
 import "github.com/go-redis/redis"
 

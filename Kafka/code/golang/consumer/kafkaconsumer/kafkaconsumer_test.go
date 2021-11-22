@@ -11,5 +11,4 @@ func TestKafkaConsumer(t *testing.T) {
 	go goAnalysis()
 
 	consume()
-
 }

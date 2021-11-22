@@ -31,6 +31,7 @@ func init() {
 	node.List = *list.New()
 	node.List.Init()
 	node.SendLen = 0
+
 	GCacheData = node
 }
 
@@ -54,6 +55,7 @@ func SendCacheData(to chan MyInfo) {
 
 // GoCacheData ...
 func GoCacheData(to chan MyInfo, sec int64) {
+
 	t := time.NewTimer(time.Duration(sec) * time.Second)
 
 	for {

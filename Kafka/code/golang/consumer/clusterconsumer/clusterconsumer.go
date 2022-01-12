@@ -30,6 +30,7 @@ func KafkaInit(addrs []string, groupID string, topicId string, superReboot bool)
 		glog.Errorln(err)
 		return err
 	}
+
 	go chkConsumer(ordRespConsumer)
 	return nil
 }
@@ -55,3 +56,13 @@ func Close() {
 func GetOrdRespChan() <-chan *sarama.ConsumerMessage {
 	return ordRespConsumer.Messages()
 }
+
+// func GetAaBb() {
+// 	aa := GetOrdRespChan()
+
+// 	ordRespConsumer.MarkOffset()
+// 	ordRespConsumer.MarkOffsets()
+// 	ordRespConsumer.MarkPartitionOffset()
+
+// 	ordRespConsumer.CommitOffsets()
+// }

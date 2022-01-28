@@ -1,3 +1,24 @@
+
+Minikube is a lightweight Kubernetes implementation 
+that creates a VM on your local machine 
+and deploys a simple cluster containing only one node.   
+
+Minikube is available for Linux, macOS, and Windows systems.   
+
+The Minikube CLI provides basic bootstrapping operations for working with your cluster, including start, stop, status, and delete.
+
+
+
+minikube is local Kubernetes,   
+focusing on making it easy to learn and develop for Kubernetes.   
+
+All you need is Docker (or similarly compatible) container   
+or a Virtual Machine environment,    
+and Kubernetes is a single command away: `minikube start`     
+
+
+
+
 Hello Minikube   
 This tutorial shows you how to run a sample app on Kubernetes using minikube and Katacoda. Katacoda provides a free, in-browser Kubernetes environment.   
 Note: You can also follow this tutorial if you've installed minikube locally. See minikube start for installation instructions.    
@@ -7,8 +28,7 @@ Objectives
 2. Run the app.   
 3. View application logs.   
 
-Before you begin   
-This tutorial provides a container image that uses NGINX to echo back all the requests.  
+  
 
 The dashboard command enables the dashboard add-on and opens the proxy in the default web browser.  
 You can create Kubernetes resources on the dashboard such as Deployment and Service.  
@@ -20,6 +40,9 @@ If you don't want to open a web browser, run the dashboard command with the --ur
 
 By default, the dashboard is only accessible from within the internal Kubernetes virtual network.   
 The dashboard command creates a temporary proxy to make the dashboard accessible from outside the Kubernetes virtual network.    
+
+
+
 
 To stop the proxy, run Ctrl+C to exit the process. After the command exits, the dashboard remains running in the Kubernetes cluster.  
 You can run the dashboard command again to create another proxy to access the dashboard.  

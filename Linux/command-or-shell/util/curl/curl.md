@@ -1,4 +1,6 @@
- 
+
+<https://curl.se/docs/manpage.html>  
+
 在 Linux 中 curl 是一个利用 URL 规则在命令行下工作的文件传输工具，可以说是一款很强大的 http 命令行工具。
 它支持文件的上传和下载，是综合传输工具，但按传统，习惯称 url 为下载工具。
 

@@ -1,6 +1,7 @@
 
 `sudo apt-get update`  
-`sudo apt-get install nginx`  
+ 
+`sudo apt-get -y install nginx`  
 `vim /etc/nginx/nginx.conf`  
 `vim /etc/nginx/sites-enabled/default`  
 

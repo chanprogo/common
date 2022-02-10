@@ -5,4 +5,5 @@
 
 comment `PermitRootLogin prohibit-password`，then add `PermitRootLogin yes`  
 
-`service ssh restart`  
+`service ssh restart`   
+ 

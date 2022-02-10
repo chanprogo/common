@@ -1,27 +1,20 @@
-
-Minikube is a lightweight Kubernetes implementation 
-that creates a VM on your local machine 
-and deploys a simple cluster containing only one node.   
-
-The Minikube CLI provides basic bootstrapping operations for working with your cluster, including start, stop, status, and delete.
-
-
-
-minikube is local Kubernetes,   
-focusing on making it easy to learn and develop for Kubernetes.   
-
-All you need is Docker (or similarly compatible) container   
-or a Virtual Machine environment,    
-and Kubernetes is a single command away: `minikube start`     
-
-
-
-  
-`minikube dashboard --url`   
+ 
+`kubectl get po -A` 
 
 
 `kubectl create deployment hello-node --image=k8s.gcr.io/echoserver:1.4`   
  
+
+Create a sample deployment and expose it on port 8080:  
+`kubectl create deployment hello-minikube --image=k8s.gcr.io/echoserver:1.4`  
+`kubectl expose deployment hello-minikube --type=NodePort --port=8080`  
+`kubectl get services hello-minikube` 
+
+Alternatively, use kubectl to forward the port:   
+`kubectl port-forward service/hello-minikube 7080:8080`  
+
+
+
 `kubectl get deployments`    
 
 `kubectl get pods`    

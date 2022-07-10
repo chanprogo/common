@@ -7,6 +7,9 @@
 `git config --local user.email "you@example.com"`  
 
 
+
+`git config --global push.default simple` 
+
 `git config --local credential.helper store`  
 
 `git config --add core.filemode false`  

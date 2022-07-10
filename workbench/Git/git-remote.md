@@ -1,4 +1,9 @@
 
+`git remote add origin https://git.oschina.net/chan/my-documents.git`  
+
+`git remote update --prune`  
+
+
 ```
 usage: git remote [-v]
 

@@ -1,16 +1,27 @@
 
-<https://curl.se/docs/manpage.html>  
-
 在 Linux 中 curl 是一个利用 URL 规则在命令行下工作的文件传输工具，可以说是一款很强大的 http 命令行工具。
 它支持文件的上传和下载，是综合传输工具，但按传统，习惯称 url 为下载工具。
 
-`apt-get -y install curl`  
+curl is a tool for transferring data from or to a server.   
+It supports these protocols: DICT, FILE, FTP, FTPS, GOPHER, GOPHERS, HTTP, HTTPS, IMAP, IMAPS, LDAP, LDAPS, MQTT, POP3, POP3S, RTMP, RTMPS, RTSP, SCP, SFTP, SMB, SMBS, SMTP, SMTPS, TELNET or TFTP.   
+The command is designed to work without user interaction.  
 
 
+curl offers a busload of useful tricks 
+like 
+proxy support, 
+user authentication, 
+FTP upload, 
+HTTP post, 
+SSL connections, 
+cookies, 
+file transfer resume 
+and more. 
 
-curl - Transfers data from or to a server, 
-using one of the protocols: 
-HTTP, HTTPS, FTP, FTPS, SCP, SFTP, TFTP, DICT, TELNET, LDAP or FILE. 
+
+curl is powered by libcurl for all transfer-related features. See libcurl(3) for details.
+
+
 (To transfer multiple files use wget or FTP.)  
 
 

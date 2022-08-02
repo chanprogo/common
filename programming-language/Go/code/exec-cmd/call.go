@@ -23,7 +23,7 @@ func CallGeth(method, params string) (string, error) {
 		return "", err
 	}
 
-	bytes, err := ioutil.ReadAll(stdout) // 读取所有输出
+	bytes, err := ioutil.ReadAll(stdout)
 	if err != nil {
 		return "", err
 	}

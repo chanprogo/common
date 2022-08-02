@@ -1,6 +1,6 @@
 
 expect 是 用来 进行自动化控制 和 测试的工具。  
-主要 是 和 交互式软件 telnet ftp ssh 等 进行 自动化 的交互。
+主要 是 和 交互式软件 telnet、ftp、ssh 等 进行 自动化 的交互。
 
 检测是否安装：  `ls /usr/bin | grep expect`  
 

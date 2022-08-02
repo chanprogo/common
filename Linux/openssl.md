@@ -1,4 +1,4 @@
-# OpenSSL生成公钥私钥
+# OpenSSL 生成公钥私钥
 
 ## 用 OpenSSL， Linux 上自带，常用命令如下：  
 * 生成 RSA 私钥（传统格式的）  
